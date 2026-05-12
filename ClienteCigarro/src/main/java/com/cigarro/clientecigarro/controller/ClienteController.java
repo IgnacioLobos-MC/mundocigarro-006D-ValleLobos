@@ -16,7 +16,7 @@ import com.cigarro.clientecigarro.model.Cliente;
 import com.cigarro.clientecigarro.service.ClienteService;
 
 @RestController
-@RequestMapping("/api/v1/clientes")
+@RequestMapping("/api/v1/clientes/")
 
 public class ClienteController {
 
@@ -30,6 +30,16 @@ public class ClienteController {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(clientes);
+    }
+
+    @GetMapping("/{id}")//buscar por id
+    public ResponseEntity<Cliente> obtenerCliente(@PathVariable Long id) {
+        try {
+            Cliente cliente = clienteService.buscaClienteId(id);
+            return ResponseEntity.ok(cliente);
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping

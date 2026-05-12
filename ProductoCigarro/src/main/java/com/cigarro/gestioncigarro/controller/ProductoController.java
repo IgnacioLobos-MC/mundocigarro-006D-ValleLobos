@@ -18,7 +18,7 @@ import com.cigarro.gestioncigarro.model.Producto;
 import com.cigarro.gestioncigarro.service.ProductoService;
 
 @RestController
-@RequestMapping("/api/v1/productos")
+@RequestMapping("/api/v1/productos%")
 public class ProductoController {
 
     @Autowired
@@ -31,6 +31,16 @@ public class ProductoController {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(productos);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Producto> buscarPorId(@PathVariable Long id){
+        try{
+            Producto producto = productoService.buscaProductoId(id);
+            return ResponseEntity.ok(producto);
+        }catch (Exception e){
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping
