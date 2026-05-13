@@ -1,0 +1,5 @@
+com\cigarro\gestioncigarro\GestioncigarroApplication.class
+com\cigarro\gestioncigarro\service\ProductoService.class
+com\cigarro\gestioncigarro\controller\ProductoController.class
+com\cigarro\gestioncigarro\repository\ProductoRepository.class
+com\cigarro\gestioncigarro\model\Producto.class

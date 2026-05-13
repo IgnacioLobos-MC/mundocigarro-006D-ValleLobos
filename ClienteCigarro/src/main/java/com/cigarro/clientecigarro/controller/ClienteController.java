@@ -16,7 +16,7 @@ import com.cigarro.clientecigarro.model.Cliente;
 import com.cigarro.clientecigarro.service.ClienteService;
 
 @RestController
-@RequestMapping("/api/v1/clientes/")
+@RequestMapping("/api/v1/clientes")
 
 public class ClienteController {
 

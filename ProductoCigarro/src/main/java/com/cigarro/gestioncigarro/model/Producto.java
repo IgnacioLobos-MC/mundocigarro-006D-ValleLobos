@@ -32,10 +32,4 @@ public class Producto {
 
     @Column(unique = false, nullable = false)
     private Float precio;
-
-    @Column(nullable = false)
-    private String direccion;
-
-    @Column(nullable = false)
-    private String fechaRegistro;
 }

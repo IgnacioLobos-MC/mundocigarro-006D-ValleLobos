@@ -18,7 +18,7 @@ import com.cigarro.gestioncigarro.model.Producto;
 import com.cigarro.gestioncigarro.service.ProductoService;
 
 @RestController
-@RequestMapping("/api/v1/productos%")
+@RequestMapping("/api/v1/productos")
 public class ProductoController {
 
     @Autowired
