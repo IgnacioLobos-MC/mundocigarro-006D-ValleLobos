@@ -8,7 +8,8 @@
             "mainClass": "com.mundocigarro.cigarroventa.CigarroventaApplication",
             "projectName": "cigarroventa",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
         },
         {
             "type": "java",
@@ -18,7 +19,8 @@
             "mainClass": "com.cigarro.clientecigarro.ClientecigarroApplication",
             "projectName": "clientecigarro",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
         },
         {
             "type": "java",
@@ -37,6 +39,16 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.cigarro.gestioncigarro.GestioncigarroApplication",
             "projectName": "gestioncigarro",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DeliveryApplication<delivery>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.mundocigarro.delivery.DeliveryApplication",
+            "projectName": "delivery",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
