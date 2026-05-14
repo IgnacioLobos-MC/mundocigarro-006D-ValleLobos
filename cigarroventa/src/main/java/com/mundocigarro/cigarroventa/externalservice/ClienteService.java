@@ -13,7 +13,7 @@ public class ClienteService {
     private RestTemplate restTemplate;
 
     public ClienteDto obternerCliente(Long idCliente){
-        String url = "http://localhost:8081/clientes/" + idCliente;
+        String url = "http://localhost:8081/api/v1/clientes/" + idCliente;
         return restTemplate.getForObject(url, ClienteDto.class);
     }
 
