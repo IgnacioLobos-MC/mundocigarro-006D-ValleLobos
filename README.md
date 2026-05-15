@@ -132,7 +132,7 @@ Endpoint base:
 
 ````text
 /api/v1/productos
-```text
+
 /api/v1/productos
 ````
 
@@ -168,7 +168,7 @@ Endpoint base:
 
 ````text
 /api/v1/ventas
-```text
+
 /api/v1/ventas
 ````
 
@@ -211,7 +211,7 @@ Endpoint base:
 
 ````text
 /api/v1/detalles
-```text
+
 /api/v1/detalles
 ````
 
@@ -251,7 +251,7 @@ Endpoint base:
 
 ````text
 /api/v1/delivery
-```text
+
 /api/v1/delivery
 ````
 
