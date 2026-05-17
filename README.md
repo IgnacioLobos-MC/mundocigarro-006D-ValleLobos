@@ -11,6 +11,9 @@ El proyecto permite administrar:
 * Ventas
 * Detalle de ventas
 * Delivery
+* Pagos
+* Inventario
+* ApiGateWay
 
 Cada módulo funciona como un microservicio independiente conectado mediante comunicación REST utilizando RestTemplate.
 
@@ -40,6 +43,9 @@ Cada módulo funciona como un microservicio independiente conectado mediante com
 | venta         | 8083   | Gestión de ventas            |
 | detalleventa  | 8084   | Gestión de detalles de venta |
 | delivery      | 8085   | Gestión de envíos            |
+| pago          | 8086   | Gestión de pagos             |
+| inventario    | 8087   | Gestión de inventarios       |
+| apigateway    | 9090   | Enrutamiento de solicitudes a microservicios |
 
 ---
 
@@ -255,7 +261,107 @@ Endpoint base:
 /api/v1/delivery
 ````
 
+
 ---
+
+# 6. Pago
+
+Puerto:
+
+```text
+8086
+```
+
+El microservicio Pago gestiona la información relacionada con los pagos de los pedidos realizados en el sistema.
+
+Permite:
+
+* Registrar pago
+* Consultar pago
+* Buscar tipo de pago
+* Eliminar pago
+
+Antes de registrar un pago, el sistema consulta el microservicio de Venta para validar la orden antes de procesar el pago.
+
+Atributos:
+
+* idPago
+* idVenta
+* metodoPago
+* monto
+* estadoPago
+* fechaPago
+
+Endpoint base:
+
+````text
+/api/v1/pagos
+
+/api/v1/pagos
+````
+# 7. Inventario
+
+Puerto:
+
+```text
+8087
+```
+
+El microservicio Inventario gestiona la información relacionada con el stock de productos disponibles en el sistema.
+
+Permite:
+
+* Registrar inventario
+* Listar inventario
+* Buscar productos
+* Eliminar inventario
+
+Este servicio se comunica con el microservicio de Productos para obtener información antes de registrar el inventario.
+
+Atributos:
+
+* id
+* producto
+* marca
+* stock
+* precio
+
+Endpoint base:
+
+````text
+/api/v1/inventario
+
+/api/v1/inventario
+````
+
+# 8. API Gateway
+
+Puerto:
+
+```text
+9090
+```
+
+El API Gateway gestiona la entrada y redirección de solicitudes hacia los microservicios del sistema, centralizando el acceso a las APIs.
+
+Permite: 
+
+* enrutar solicitudes de clientes
+* enrutar solicitudes de productos
+* enrutar solicitudes de ventas
+* enrutar solicitudes de detalles de venta
+* enrutar solicitudes de delivery
+* enrutar solicitudes de pagos
+* enrutar solicitudes de inventario
+* redirigir solicitudes a los microservicios correspondientes
+
+Atributos:
+
+* puerto de ejecución (9090)
+* rutas de microservicios
+* URIs de servicios
+* servicios registrados
+
 
 # Comunicación Entre Microservicios
 
@@ -398,6 +504,79 @@ POST http://localhost:8085/api/v1/delivery
 ```
 
 ---
+
+## Crear Pago
+
+```http
+POST http://localhost:8086/api/v1/pagos
+```
+```json
+{
+    "idVenta": 2,
+    "metodoPago": "TARJETA",
+    "monto": 9000,
+    "estadoPago": "PAGADO",
+    "fechaPago": "2026-05-14"
+}
+```
+
+---
+
+## Crear Inventario
+
+```http
+POST http://localhost:8087/api/v1/inventario
+```
+
+```json
+{
+    "producto": "Marlboro Gold",
+    "marca": "Marlboro",
+    "stock": 50,
+    "precio": 4500
+}
+```
+
+---
+
+## API Gateway
+
+## Crear Cliente (Gateway)
+```http
+POST http://localhost:9090/api/v1/clientes
+```
+
+```http
+## Crear Producto (Gateway)
+POST http://localhost:9090/api/v1/productos
+```
+
+```http
+## Crear Venta (Gateway)
+POST http://localhost:9090/api/v1/ventas
+```
+
+```http
+## Crear Pago (Gateway)
+POST http://localhost:9090/api/v1/pagos
+```
+
+```http
+## Crear Inventario (Gateway)
+POST http://localhost:9090/api/v1/inventario
+```
+
+```http
+## Crear Delivery (Gateway)
+POST http://localhost:9090/api/v1/delivery
+```
+
+
+```http
+## Crear Detalle Venta (Gateway)
+POST http://localhost:9090/api/v1/detalles
+```
+
 
 # GitHub
 
