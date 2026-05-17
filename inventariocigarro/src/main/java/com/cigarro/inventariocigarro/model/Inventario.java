@@ -8,10 +8,9 @@ import jakarta.persistence.Id;
 @Entity
 public class Inventario {
 
-      @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String producto;
     private String marca;
     private int stock;
