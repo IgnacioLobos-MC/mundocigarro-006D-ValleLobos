@@ -11,7 +11,7 @@ El proyecto permite administrar:
 * Ventas
 * Detalle de ventas
 * Delivery
-* Pagos
+* Pago
 * Inventario
 * ApiGateWay
 
