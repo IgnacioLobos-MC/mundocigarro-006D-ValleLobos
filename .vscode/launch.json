@@ -1,0 +1,56 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CigarroventaApplication<cigarroventa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.mundocigarro.cigarroventa.CigarroventaApplication",
+            "projectName": "cigarroventa",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ClientecigarroApplication<clientecigarro>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.cigarro.clientecigarro.ClientecigarroApplication",
+            "projectName": "clientecigarro",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DetalleventaApplication<detalleventa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.mundocigarro.detalleventa.DetalleventaApplication",
+            "projectName": "detalleventa",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GestioncigarroApplication<gestioncigarro>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.cigarro.gestioncigarro.GestioncigarroApplication",
+            "projectName": "gestioncigarro",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DeliveryApplication<delivery>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.mundocigarro.delivery.DeliveryApplication",
+            "projectName": "delivery",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

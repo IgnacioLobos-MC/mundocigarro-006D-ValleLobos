@@ -1,0 +1,13 @@
+package com.cigarro.clientecigarro;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ClientecigarroApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ClientecigarroApplication.class, args);
+	}
+
+}
